@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retraite Simplifiee - Comprenez votre retraite</title>
+<meta name="description" content="Comprenez enfin votre retraite en quelques minutes. Simulateur gratuit et articles.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',sans-serif;background:#F9F9F7;color:#1C1C1A}
+html{scroll-behavior:smooth}
+::selection{background:#2C5234;color:#fff}
+input[type=range]{-webkit-appearance:none;width:100%;height:8px;border-radius:4px;background:#E0DCD1;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#2C5234;cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(44,82,52,.3)}
+.hidden-section{display:none}
+.visible-section{display:block}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<a href="#" onclick="showHome()" class="flex items-center gap-2 no-underline">
+<div class="w-10 h-10 rounded-full bg-[#2C5234] flex items-center justify-center">
+<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+</div>
+<span class="text-xl font-bold text-[#1C1C1A]">Retraite Simplifiee</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a href="#probleme" class="text-[#5B5B56] hover:text-[#2C5234] font-medium no-underline">Probleme</a>
+<a href="#solution" class="text-[#5B5B56] hover:text-[#2C5234] font-medium no-underline">Solution</a>
+<a href="#simulateur" class="text-[#5B5B56] hover:text-[#2C5234] font-medium no-underline">Simulateur</a>
+<a href="#" onclick="showBlog()" class="text-[#5B5B56] hover:text-[#2C5234] font-medium no-underline">Blog</a>
+<a href="#contact" class="text-[#5B5B56] hover:text-[#2C5234] font-medium no-underline">Contact</a>
+</nav>
+<a href="#contact" class="hidden md:block no-underline">
+<button class="bg-[#2C5234] hover:bg-[#1F3A24] text-white px-6 py-3 rounded-full font-medium cursor-pointer border-none">Nous contacter</button>
+</a>
+<button id="menu-btn" onclick="toggleMenu()" class="md:hidden p-2 bg-transparent border-none cursor-pointer">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+</div>
+<div id="mobile-menu" class="md:hidden hidden bg-white rounded-2xl shadow-lg p-6 mt-2">
+<nav class="flex flex-col gap-4">
+<a href="#probleme" onclick="closeMenu()" class="text-[#5B5B56] hover:text-[#2C5234] font-medium py-2 no-underline">Probleme</a>
+<a href="#solution" onclick="closeMenu()" class="text-[#5B5B56] hover:text-[#2C5234] font-medium py-2 no-underline">Solution</a>
+<a href="#simulateur" onclick="closeMenu()" class="text-[#5B5B56] hover:text-[#2C5234] font-medium py-2 no-underline">Simulateur</a>
+<a href="#" onclick="showBlog();closeMenu()" class="text-[#5B5B56] hover:text-[#2C5234] font-medium py-2 no-underline">Blog</a>
+<a href="#contact" onclick="closeMenu()" class="text-[#5B5B56] hover:text-[#2C5234] font-medium py-2 no-underline">Contact</a>
+</nav>
+</div>
+</div>
+</header>
+
+<!-- PAGE ACCUEIL -->
+<div id="home-page">
+
+<!-- HERO -->
+<section class="pt-32 pb-20 px-4 bg-[#F9F9F7]">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-flex items-center gap-2 bg-[#EFECE6] text-[#2C5234] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+Plus de 15 000 personnes accompagnees
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1C1C1A] leading-tight mb-6">Comprenez enfin votre retraite en <span class="text-[#2C5234]">quelques minutes</span></h1>
+<p class="text-lg sm:text-xl text-[#5B5B56] mb-8 leading-relaxed">Recevez une analyse claire et simplifiee de votre situation a partir de vos documents officiels.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#simulateur"><button class="w-full sm:w-auto bg-[#2C5234] hover:bg-[#1F3A24] text-white px-8 py-4 rounded-full text-lg font-medium cursor-pointer border-none">Simuler ma retraite gratuitement</button></a>
+<a href="#contact"><button class="w-full sm:w-auto border-2 border-[#2C5234] text-[#2C5234] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#EFECE6] cursor-pointer bg-transparent">Nous contacter</button></a>
+</div>
+<div class="flex items-center gap-6 mt-8 pt-8 border-t border-[#E0DCD1]">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full bg-[#EFECE6] border-2 border-white flex items-center justify-center"><svg class="w-4 h-4 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+<div class="w-10 h-10 rounded-full bg-[#EFECE6] border-2 border-white flex items-center justify-center"><svg class="w-4 h-4 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+<div class="w-10 h-10 rounded-full bg-[#EFECE6] border-2 border-white flex items-center justify-center"><svg class="w-4 h-4 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+<div class="w-10 h-10 rounded-full bg-[#EFECE6] border-2 border-white flex items-center justify-center"><svg class="w-4 h-4 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<svg class="w-4 h-4 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<svg class="w-4 h-4 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<svg class="w-4 h-4 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<svg class="w-4 h-4 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<svg class="w-4 h-4 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+</div>
+<p class="text-sm text-[#5B5B56]">4.9/5 base sur 2 500 avis</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<img src="https://images.unsplash.com/photo-1599947146406-612486387faf?w=800" alt="Documents retraite" class="rounded-2xl shadow-2xl w-full object-cover">
+<div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-lg hidden sm:block">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-[#2C5234] flex items-center justify-center">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+</div>
+<div><p class="font-semibold text-[#1C1C1A]">100% Securise</p><p class="text-sm text-[#5B5B56]">Conforme RGPD</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROBLEME -->
+<section id="probleme" class="py-24 px-4 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="inline-block bg-[#B0413E]/10 text-[#B0413E] px-4 py-2 rounded-full text-sm font-semibold mb-4">Le Probleme</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-4">Comprendre sa retraite est un vrai casse-tete</h2>
+<p class="text-lg text-[#5B5B56] max-w-2xl mx-auto">Resultat : vous avancez dans le flou.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-14 h-14 rounded-2xl bg-[#B0413E]/10 flex items-center justify-center mb-4"><svg class="w-7 h-7 text-[#B0413E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+<h3 class="text-lg font-semibold text-[#1C1C1A] mb-2">Informations complexes</h3>
+<p class="text-[#5B5B56]">Des documents difficiles a comprendre</p>
+</div>
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-14 h-14 rounded-2xl bg-[#B0413E]/10 flex items-center justify-center mb-4"><svg class="w-7 h-7 text-[#B0413E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+<h3 class="text-lg font-semibold text-[#1C1C1A] mb-2">Estimation difficile</h3>
+<p class="text-[#5B5B56]">Impossible de calculer ses droits</p>
+</div>
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-14 h-14 rounded-2xl bg-[#B0413E]/10 flex items-center justify-center mb-4"><svg class="w-7 h-7 text-[#B0413E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+<h3 class="text-lg font-semibold text-[#1C1C1A] mb-2">Peur des erreurs</h3>
+<p class="text-[#5B5B56]">Risque de se tromper</p>
+</div>
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-6 hover:shadow-lg transition-shadow">
+<div class="w-14 h-14 rounded-2xl bg-[#B0413E]/10 flex items-center justify-center mb-4"><svg class="w-7 h-7 text-[#B0413E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
+<h3 class="text-lg font-semibold text-[#1C1C1A] mb-2">Manque de visibilite</h3>
+<p class="text-[#5B5B56]">Impossible de verifier</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution" class="py-24 px-4 bg-[#F9F9F7]">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="inline-block bg-[#2C5234]/10 text-[#2C5234] px-4 py-2 rounded-full text-sm font-semibold mb-4">Notre Solution</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-6">Une analyse claire pour reprendre le controle</h2>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E0DCD1]"><div class="w-12 h-12 rounded-xl bg-[#2C5234]/10 flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><h3 class="font-semibold text-[#1C1C1A] mb-1">Comprendre votre situation</h3><p class="text-[#5B5B56]">Analyse claire de vos droits acquis</p></div></div>
+<div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E0DCD1]"><div class="w-12 h-12 rounded-xl bg-[#2C5234]/10 flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div><div><h3 class="font-semibold text-[#1C1C1A] mb-1">Identifier les erreurs</h3><p class="text-[#5B5B56]">Reperage des oublis et anomalies</p></div></div>
+<div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E0DCD1]"><div class="w-12 h-12 rounded-xl bg-[#2C5234]/10 flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><h3 class="font-semibold text-[#1C1C1A] mb-1">Points d'attention</h3><p class="text-[#5B5B56]">Ce qui merite votre vigilance</p></div></div>
+<div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E0DCD1]"><div class="w-12 h-12 rounded-xl bg-[#2C5234]/10 flex items-center justify-center shrink-0"><svg class="w-6 h-6 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div><div><h3 class="font-semibold text-[#1C1C1A] mb-1">Actions a entreprendre</h3><p class="text-[#5B5B56]">Recommandations personnalisees</p></div></div>
+</div>
+</div>
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800" alt="Solution retraite" class="rounded-2xl shadow-xl w-full object-cover">
+</div>
+</div>
+</section>
+
+<!-- COMMENT CA MARCHE -->
+<section class="py-24 px-4 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="inline-block bg-[#EFECE6] text-[#2C5234] px-4 py-2 rounded-full text-sm font-semibold mb-4">Comment ca marche</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-4">3 etapes simples</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#2C5234] text-white flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
+<h3 class="text-xl font-semibold text-[#1C1C1A] mb-2">Importez vos documents</h3>
+<p class="text-[#5B5B56]">Envoyez votre releve de facon securisee</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#2C5234] text-white flex items-center justify-center mx-auto mb-6 text-2xl font-bold">2</div>
+<h3 class="text-xl font-semibold text-[#1C1C1A] mb-2">Notre systeme analyse</h3>
+<p class="text-[#5B5B56]">Analyse approfondie par nos experts</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#2C5234] text-white flex items-center justify-center mx-auto mb-6 text-2xl font-bold">3</div>
+<h3 class="text-xl font-semibold text-[#1C1C1A] mb-2">Recevez votre synthese</h3>
+<p class="text-[#5B5B56]">Synthese claire et comprehensible</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CE QUE VOUS RECEVEZ -->
+<section class="py-24 px-4 bg-[#2C5234]">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">Ce que vous recevez</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-6">Une synthese complete</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-white/10 rounded-xl p-4"><svg class="w-6 h-6 text-[#C98263]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-white text-lg">Resume de votre situation</span></div>
+<div class="flex items-center gap-4 bg-white/10 rounded-xl p-4"><svg class="w-6 h-6 text-[#C98263]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-white text-lg">Points de vigilance identifies</span></div>
+<div class="flex items-center gap-4 bg-white/10 rounded-xl p-4"><svg class="w-6 h-6 text-[#C98263]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-white text-lg">Estimation indicative</span></div>
+<div class="flex items-center gap-4 bg-white/10 rounded-xl p-4"><svg class="w-6 h-6 text-[#C98263]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-white text-lg">Recommandations generales</span></div>
+</div>
+</div>
+<div class="bg-white/10 rounded-2xl p-8 space-y-6">
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#C98263] flex items-center justify-center"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><div><h4 class="text-white font-semibold">Rapport personnalise</h4><p class="text-white/70">Adapte a votre situation</p></div></div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#C98263] flex items-center justify-center"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4 class="text-white font-semibold">Livraison rapide</h4><p class="text-white/70">Sous 48h ouvrees</p></div></div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#C98263] flex items-center justify-center"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div><h4 class="text-white font-semibold">Confidentialite</h4><p class="text-white/70">Donnees protegees RGPD</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SIMULATEUR -->
+<section id="simulateur" class="py-24 px-4 bg-[#F9F9F7]">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<span class="inline-block bg-[#C98263]/10 text-[#C98263] px-4 py-2 rounded-full text-sm font-semibold mb-4">Outil gratuit</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-4">Simulateur de retraite</h2>
+</div>
+<div class="bg-white border border-[#E0DCD1] rounded-2xl shadow-lg p-8 space-y-8">
+<div>
+<div class="flex justify-between mb-3"><label class="text-[#1C1C1A] font-medium">Votre age actuel</label><span id="age-val" class="text-[#2C5234] font-bold text-lg">45 ans</span></div>
+<input type="range" id="age" value="45" min="25" max="67" oninput="updateSliders()" class="w-full">
+</div>
+<div>
+<div class="flex justify-between mb-3"><label class="text-[#1C1C1A] font-medium">Annees de cotisation</label><span id="years-val" class="text-[#2C5234] font-bold text-lg">20 ans</span></div>
+<input type="range" id="years" value="20" min="0" max="45" oninput="updateSliders()" class="w-full">
+</div>
+<div>
+<div class="flex justify-between mb-3"><label class="text-[#1C1C1A] font-medium">Revenu moyen annuel</label><span id="income-val" class="text-[#2C5234] font-bold text-lg">35 000 euros</span></div>
+<input type="range" id="income" value="35000" min="15000" max="100000" step="1000" oninput="updateSliders()" class="w-full">
+</div>
+<button onclick="simulate()" class="w-full bg-[#2C5234] hover:bg-[#1F3A24] text-white py-4 rounded-full text-lg font-medium cursor-pointer border-none">Simuler ma retraite</button>
+<div id="sim-result" class="hidden mt-8 p-6 bg-[#EFECE6] rounded-2xl">
+<h3 class="text-xl font-semibold text-[#1C1C1A] mb-4">Resultat</h3>
+<div class="grid sm:grid-cols-2 gap-4 mb-4">
+<div class="bg-white rounded-xl p-4"><p class="text-[#5B5B56] text-sm">Estimation mensuelle</p><p id="res-monthly" class="text-2xl font-bold text-[#2C5234]"></p></div>
+<div class="bg-white rounded-xl p-4"><p class="text-[#5B5B56] text-sm">Trimestres acquis / requis</p><p id="res-trim" class="text-2xl font-bold text-[#1C1C1A]"></p></div>
+</div>
+<div class="bg-[#C98263]/10 rounded-xl p-4"><p id="res-msg" class="text-[#1C1C1A]"></p></div>
+<p class="text-sm text-[#5B5B56] mt-4 text-center">Estimation indicative uniquement.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="py-24 px-4 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="inline-block bg-[#EFECE6] text-[#2C5234] px-4 py-2 rounded-full text-sm font-semibold mb-4">Temoignages</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-4">Ils nous font confiance</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-8">
+<div class="flex items-center gap-1 mb-4"><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+<p class="text-[#5B5B56] mb-6">"J'ai decouvert 3 annees de cotisation manquantes !"</p>
+<p class="font-semibold text-[#1C1C1A]">Marie D.</p><p class="text-sm text-[#5B5B56]">Enseignante, 58 ans</p>
+</div>
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-8">
+<div class="flex items-center gap-1 mb-4"><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+<p class="text-[#5B5B56] mb-6">"Le rapport etait clair et precis."</p>
+<p class="font-semibold text-[#1C1C1A]">Pierre L.</p><p class="text-sm text-[#5B5B56]">Cadre, 62 ans</p>
+</div>
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-8">
+<div class="flex items-center gap-1 mb-4"><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-5 h-5 text-[#C98263]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+<p class="text-[#5B5B56] mb-6">"Service exceptionnel et tres humain."</p>
+<p class="font-semibold text-[#1C1C1A]">Jean-Claude M.</p><p class="text-sm text-[#5B5B56]">Artisan, 60 ans</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="py-24 px-4 bg-[#F9F9F7]">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-12">
+<span class="inline-block bg-[#EFECE6] text-[#2C5234] px-4 py-2 rounded-full text-sm font-semibold mb-4">Ressources</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-4">Nos articles</h2>
+</div>
+<div id="blog-preview-grid" class="grid md:grid-cols-3 gap-8 mb-12"></div>
+<div class="text-center"><button onclick="showBlog()" class="border-2 border-[#2C5234] text-[#2C5234] px-8 py-4 rounded-full font-medium hover:bg-[#EFECE6] cursor-pointer bg-transparent">Voir tous les articles</button></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-4 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12">
+<div>
+<span class="inline-block bg-[#EFECE6] text-[#2C5234] px-4 py-2 rounded-full text-sm font-semibold mb-4">Contact</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1C1C1A] mb-6">Une question ?</h2>
+<p class="text-lg text-[#5B5B56] mb-8">Notre equipe est a votre disposition pour repondre a toutes vos questions sur votre retraite.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-[#EFECE6] flex items-center justify-center"><svg class="w-6 h-6 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><p class="font-medium text-[#1C1C1A]">Reponse rapide</p><p class="text-sm text-[#5B5B56]">Sous 24h ouvrees</p></div></div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-[#EFECE6] flex items-center justify-center"><svg class="w-6 h-6 text-[#2C5234]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div><p class="font-medium text-[#1C1C1A]">Confidentiel</p><p class="text-sm text-[#5B5B56]">Vos donnees sont protegees</p></div></div>
+</div>
+</div>
+<div class="bg-[#F9F9F7] border border-[#E0DCD1] rounded-2xl p-8">
+<form onsubmit="sendContact(event)" class="space-y-6">
+<div><label class="block text-[#1C1C1A] font-medium mb-2">Nom</label><input type="text" id="c-name" required class="w-full border border-[#E0DCD1] rounded-xl py-3 px-4 bg-white focus:outline-none focus:border-[#2C5234]" placeholder="Votre nom"></div>
+<div><label class="block text-[#1C1C1A] font-medium mb-2">Email</label><input type="email" id="c-email" required class="w-full border border-[#E0DCD1] rounded-xl py-3 px-4 bg-white focus:outline-none focus:border-[#2C5234]" placeholder="votre@email.com"></div>
+<div><label class="block text-[#1C1C1A] font-medium mb-2">Message</label><textarea id="c-msg" required rows="4" class="w-full border border-[#E0DCD1] rounded-xl py-3 px-4 bg-white focus:outline-none focus:border-[#2C5234]" placeholder="Votre message..."></textarea></div>
+<button type="submit" class="w-full bg-[#2C5234] hover:bg-[#1F3A24] text-white py-4 rounded-full font-medium cursor-pointer border-none">Envoyer le message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- AVERTISSEMENT -->
+<section class="py-12 px-4 bg-[#EFECE6]">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-start gap-4 p-6 bg-white rounded-2xl border border-[#E0DCD1]">
+<svg class="w-8 h-8 text-[#C98263] shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+<div><h3 class="font-semibold text-[#1C1C1A] mb-2">Avertissement important</h3><p class="text-[#5B5B56] text-sm">Ce service fournit une analyse informative. Il ne constitue pas un conseil financier ou juridique. Consultez les organismes officiels pour toute decision.</p></div>
+</div>
+</div>
+</section>
+
+</div><!-- fin home-page -->
+
+<!-- PAGE BLOG -->
+<div id="blog-page" class="hidden-section pt-24 pb-20 px-4 bg-[#F9F9F7] min-h-screen">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center gap-4 mb-8"><button onclick="showHome()" class="text-[#2C5234] font-medium cursor-pointer bg-transparent border-none text-base hover:underline">Retour a l'accueil</button></div>
+<div class="text-center mb-12"><h1 class="text-3xl sm:text-4xl font-bold text-[#1C1C1A] mb-4">Nos articles</h1></div>
+<div id="blog-full-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+</div>
+</div>
+
+<!-- PAGE ARTICLE -->
+<div id="article-page" class="hidden-section pt-24 pb-20 px-4 bg-[#F9F9F7] min-h-screen">
+<div class="max-w-4xl mx-auto">
+<button onclick="showBlog()" class="text-[#2C5234] font-medium cursor-pointer bg-transparent border-none text-base hover:underline mb-8 block">Retour aux articles</button>
+<article class="bg-white rounded-2xl border border-[#E0DCD1] p-8 sm:p-12">
+<span id="art-cat" class="bg-[#EFECE6] text-[#2C5234] text-xs px-2 py-1 rounded"></span>
+<h1 id="art-title" class="text-2xl sm:text-3xl font-bold text-[#1C1C1A] mt-4 mb-6"></h1>
+<div id="art-content" class="text-[#5B5B56] leading-relaxed whitespace-pre-line"></div>
+</article>
+<div class="mt-12 p-8 bg-[#2C5234] rounded-2xl text-center">
+<h3 class="text-xl font-semibold text-white mb-4">Estimez votre retraite gratuitement</h3>
+<button onclick="showHome();setTimeout(function(){document.getElementById('simulateur').scrollIntoView({behavior:'smooth'})},100)" class="bg-white text-[#2C5234] px-8 py-4 rounded-full font-medium cursor-pointer border-none hover:bg-[#EFECE6]">Acceder au simulateur</button>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-[#1C1C1A] text-[#F9F9F7] py-20 px-4">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-3 gap-12 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-10 h-10 rounded-full bg-[#2C5234] flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+<span class="text-xl font-bold">Retraite Simplifiee</span>
+</div>
+<p class="text-[#F9F9F7]/70">Votre partenaire pour comprendre votre retraite. Plus de 15 000 personnes accompagnees.</p>
+</div>
+<div>
+<h4 class="font-semibold mb-4">Navigation</h4>
+<ul class="space-y-2 text-[#F9F9F7]/70 list-none p-0">
+<li><a href="#probleme" class="hover:text-white no-underline text-[#F9F9F7]/70">Probleme</a></li>
+<li><a href="#solution" class="hover:text-white no-underline text-[#F9F9F7]/70">Solution</a></li>
+<li><a href="#simulateur" class="hover:text-white no-underline text-[#F9F9F7]/70">Simulateur</a></li>
+<li><a href="#" onclick="showBlog()" class="hover:text-white no-underline text-[#F9F9F7]/70">Blog</a></li>
+<li><a href="#contact" class="hover:text-white no-underline text-[#F9F9F7]/70">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold mb-4">Informations</h4>
+<ul class="space-y-2 text-[#F9F9F7]/70 list-none p-0">
+<li>Simulateur gratuit disponible</li>
+<li>13 articles et guides</li>
+<li>Conforme RGPD</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#F9F9F7]/10 pt-8 text-center text-[#F9F9F7]/50 text-sm">
+<p>Retraite Simplifiee. Tous droits reserves.</p>
+</div>
+</div>
+</footer>
+
+<script>
+var ARTICLES=[
+{id:"1",slug:"comment-lire-son-releve-de-carriere",title:"Comment lire son releve de carriere ?",excerpt:"Apprenez a decrypter votre releve de carriere et comprendre chaque ligne de ce document essentiel.",content:"Le releve de carriere est un document fondamental pour preparer votre retraite. Il recapitule l'ensemble de vos droits acquis tout au long de votre vie professionnelle.\n\nLe releve de carriere, aussi appele releve individuel de situation (RIS), est un document recapitulatif qui retrace l'ensemble de votre parcours professionnel.\n\nVous pouvez obtenir votre releve de carriere sur le site info-retraite.fr avec votre numero de securite sociale, par courrier en ecrivant a votre caisse de retraite, ou automatiquement a partir de 35 ans.\n\nChaque annee, vous pouvez valider jusqu'a 4 trimestres. Pour une retraite a taux plein, vous devez generalement avoir entre 166 et 172 trimestres selon votre annee de naissance.",read_time:8,category:"Guide"},
+{id:"2",slug:"combien-vais-je-toucher",title:"Comment savoir combien je vais toucher a la retraite ?",excerpt:"Decouvrez les methodes pour estimer votre future pension de retraite.",content:"La question du montant de sa future retraite preoccupe de nombreux Francais.\n\nPour le regime general, on prend en compte vos 25 meilleures annees de revenus. Le nombre de trimestres valides determine si vous aurez droit a une retraite a taux plein (50%).\n\nFormule: Pension = Salaire annuel moyen x Taux x (Trimestres valides / Trimestres requis)\n\nUtilisez le simulateur M@rel sur info-retraite.fr pour une estimation personnalisee.",read_time:7,category:"Calcul"},
+{id:"3",slug:"erreurs-frequentes",title:"Les erreurs frequentes sur les releves de carriere",excerpt:"Identifiez les erreurs les plus courantes sur votre releve de carriere.",content:"Votre releve de carriere peut contenir des erreurs qui impacteront votre pension.\n\nLes erreurs courantes: periodes d'emploi manquantes, trimestres non valides (service militaire, conge maternite), salaires incorrects, erreurs d'etat civil.\n\nSelon nos analyses, 30% des releves contiennent au moins une anomalie. Les corrections peuvent rapporter jusqu'a 100 euros/mois supplementaires.",read_time:9,category:"Erreurs"},
+{id:"4",slug:"que-faire-retraite",title:"Que faire a la retraite : les bons plans",excerpt:"Decouvrez comment profiter pleinement de votre retraite.",content:"La retraite est une nouvelle etape de vie riche en possibilites.\n\nVoyager malin avec les cartes de reduction SNCF Senior+. Profitez des activites culturelles avec la Carte Senior. Sport et bien-etre avec les associations sportives a tarifs preferentiels.",read_time:6,category:"Lifestyle"},
+{id:"5",slug:"age-depart-retraite",title:"A quel age partir a la retraite en France ?",excerpt:"Tout savoir sur l'age legal de depart a la retraite.",content:"L'age legal augmente progressivement selon votre annee de naissance.\n\nNe avant 1961: 62 ans. Ne en 1964: 63 ans. Ne a partir de 1968: 64 ans.\n\nA 67 ans, vous beneficiez automatiquement du taux plein.",read_time:8,category:"Reglementation"},
+{id:"6",slug:"ne-pas-etre-isole",title:"Ne pas etre isole a la retraite",excerpt:"Conseils pour maintenir une vie sociale active.",content:"L'isolement est un risque reel a la retraite. Impact sur la sante: depression, declin cognitif.\n\nMaintenir le lien social: planifiez des rencontres regulieres, utilisez la technologie, rejoignez des associations locales.",read_time:7,category:"Bien-etre"},
+{id:"7",slug:"recuperer-trimestres",title:"Comment recuperer ses trimestres manquants ?",excerpt:"Solutions pour completer vos trimestres.",content:"Rachat de trimestres: annees d'etudes superieures (jusqu'a 12 trimestres), annees incompletes. Cout: 1000 euros a 6500 euros par trimestre, deductible des impots.\n\nRegularisation de carriere: service militaire, conge maternite, periodes de maladie.",read_time:9,category:"Optimisation"},
+{id:"8",slug:"demarches-avant-retraite",title:"Retraite : les demarches a faire avant de partir",excerpt:"Checklist des demarches administratives.",content:"6 mois avant: verifiez votre releve sur info-retraite.fr, utilisez le simulateur M@rel.\n\n4 mois avant: faites votre demande de retraite en ligne sur lassuranceretraite.fr.",read_time:8,category:"Demarches"},
+{id:"9",slug:"retraite-plus-faible",title:"Pourquoi votre retraite pourrait etre plus faible que prevu",excerpt:"Les facteurs qui peuvent reduire votre pension.",content:"Trimestres manquants: 1,25% de moins par trimestre manquant, jusqu'a 25% de decote maximale.\n\nLa pension brute est amputee de: CSG 8,3%, CRDS 0,5%, Casa 0,3%. Exemple: 1500 euros brut = environ 1350 euros net.",read_time:8,category:"Alerte"},
+{id:"10",slug:"gestion-psychologique",title:"Gestion psychologique : stress, burn-out apres le travail",excerpt:"Comment gerer la transition psychologique vers la retraite.",content:"La transition vers la retraite est un bouleversement psychologique majeur.\n\nAvant le depart: preparez la transition mentalement, developpez des interets hors travail.\n\nLes premiers mois: maintenez une structure, evitez l'isolement, trouvez un nouveau sens.",read_time:9,category:"Bien-etre"},
+{id:"11",slug:"simulateur-fiabilite",title:"Simulateur retraite : est-ce fiable ?",excerpt:"Analyse critique des simulateurs de retraite en ligne.",content:"Le simulateur M@rel sur info-retraite.fr est le plus fiable car base sur vos vraies donnees de carriere.\n\nLes simulateurs simplifies sont rapides mais peuvent etre tres imprecis. Prenez les resultats comme indicatifs.",read_time:7,category:"Outils"},
+{id:"12",slug:"optimiser-retraite",title:"Comment optimiser sa retraite sans etre expert",excerpt:"Des conseils simples pour ameliorer votre future pension.",content:"30% des releves contiennent des erreurs pouvant impacter la pension.\n\nActions immediates: verifiez votre releve sur info-retraite.fr, conservez tous vos bulletins de salaire, signalez les erreurs rapidement.",read_time:8,category:"Optimisation"},
+{id:"13",slug:"releve-incomplet",title:"Releve de carriere incomplet : que faire ?",excerpt:"Guide pour completer les periodes manquantes.",content:"Ce qui doit figurer: tous vos emplois, les periodes assimilees (chomage, maladie, maternite), le service militaire, les stages remuneres.\n\nProcedure: rassemblez les preuves (bulletins de salaire, contrats), faites la demande sur lassuranceretraite.fr.",read_time:9,category:"Demarches"}
+];
+
+function makeCard(a){return '<a href="#" onclick="showArticle(\''+a.id+'\');return false" class="bg-white border border-[#E0DCD1] rounded-2xl overflow-hidden hover:shadow-lg transition-shadow block no-underline"><div class="h-48 bg-gradient-to-br from-[#2C5234]/10 to-[#C98263]/10 flex items-center justify-center"><svg class="w-16 h-16 text-[#2C5234]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><div class="p-6"><span class="bg-[#EFECE6] text-[#2C5234] text-xs px-2 py-1 rounded">'+a.category+'</span><h3 class="font-semibold text-[#1C1C1A] mt-3 mb-2">'+a.title+'</h3><p class="text-sm text-[#5B5B56]">'+a.excerpt+'</p></div></a>';}
+
+function renderBlogPreview(){var h="";for(var i=0;i<3;i++){h+=makeCard(ARTICLES[i]);}document.getElementById("blog-preview-grid").innerHTML=h;}
+function renderBlogFull(){var h="";for(var i=0;i<ARTICLES.length;i++){h+=makeCard(ARTICLES[i]);}document.getElementById("blog-full-grid").innerHTML=h;}
+
+function showHome(){document.getElementById("home-page").style.display="block";document.getElementById("blog-page").className="hidden-section";document.getElementById("article-page").className="hidden-section";window.scrollTo(0,0);}
+function showBlog(){document.getElementById("home-page").style.display="none";document.getElementById("blog-page").className="visible-section";document.getElementById("article-page").className="hidden-section";renderBlogFull();window.scrollTo(0,0);}
+function showArticle(id){var a=ARTICLES.find(function(x){return x.id===id;});if(!a)return;document.getElementById("home-page").style.display="none";document.getElementById("blog-page").className="hidden-section";document.getElementById("article-page").className="visible-section";document.getElementById("art-cat").textContent=a.category;document.getElementById("art-title").textContent=a.title;document.getElementById("art-content").textContent=a.content;window.scrollTo(0,0);}
+
+function toggleMenu(){var m=document.getElementById("mobile-menu");m.classList.toggle("hidden");}
+function closeMenu(){document.getElementById("mobile-menu").classList.add("hidden");}
+
+window.addEventListener("scroll",function(){var h=document.getElementById("site-header");if(window.scrollY>50){h.className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#F9F9F7]/95 backdrop-blur-xl shadow-sm";}else{h.className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent";}});
+
+function updateSliders(){document.getElementById("age-val").textContent=document.getElementById("age").value+" ans";document.getElementById("years-val").textContent=document.getElementById("years").value+" ans";var inc=parseInt(document.getElementById("income").value);document.getElementById("income-val").textContent=inc.toLocaleString("fr-FR")+" euros";}
+
+function simulate(){var age=parseInt(document.getElementById("age").value);var years=parseInt(document.getElementById("years").value);var income=parseInt(document.getElementById("income").value);var ta=years*4;var tn=172;var tm=Math.max(0,tn-ta);var dec=Math.min(tm*0.625,25);var taux=50-dec;var pb=income*(taux/100)*(Math.min(ta,tn)/tn);var pa=pb+pb*0.67;var pm=Math.round(pa/12);var msg=tm>0?"Attention : il vous manque environ "+tm+" trimestres pour le taux plein.":"Vous semblez avoir suffisamment de trimestres pour une retraite a taux plein !";document.getElementById("res-monthly").textContent=pm.toLocaleString("fr-FR")+" euros";document.getElementById("res-trim").textContent=ta+" / "+tn;document.getElementById("res-msg").textContent=msg;document.getElementById("sim-result").classList.remove("hidden");}
+
+function sendContact(e){e.preventDefault();var n=document.getElementById("c-name").value;var em=document.getElementById("c-email").value;var msg=document.getElementById("c-msg").value;var subject=encodeURIComponent("Contact - "+n);var body=encodeURIComponent("Nom: "+n+"\nEmail: "+em+"\n\nMessage:\n"+msg);window.location.href="mailto:hello@solutionstmf.com?subject="+subject+"&body="+body;}
+
+renderBlogPreview();
+</script>
+</body>
+</html>
