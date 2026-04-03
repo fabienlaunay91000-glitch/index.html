@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "@/App.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route, Link, useParams, useNavigate } from "react-router-dom";
 import { 
   FileText, 
@@ -29,14 +29,14 @@ import {
   Activity,
   Home
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Toaster } from "@/components/ui/sonner";
+import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
+import { Textarea } from "./components/ui/textarea";
+import { Slider } from "./components/ui/slider";
+import { Label } from "./components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card";
+import { Badge } from "./components/ui/badge";
+import { Toaster } from "./components/ui/sonner";
 import { toast } from "sonner";
 
 // Stripe payment links
