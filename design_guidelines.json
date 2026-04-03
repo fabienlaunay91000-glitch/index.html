@@ -1,0 +1,87 @@
+{
+  "theme": "light",
+  "archetype": "Organic & Earthy",
+  "colors": {
+    "background": "#F9F9F7",
+    "surface": "#FFFFFF",
+    "surface_secondary": "#EFECE6",
+    "primary": "#2C5234",
+    "primary_hover": "#1F3A24",
+    "secondary_accent": "#C98263",
+    "text_primary": "#1C1C1A",
+    "text_secondary": "#5B5B56",
+    "border": "#E0DCD1",
+    "success": "#34623F",
+    "warning": "#C98263",
+    "error": "#B0413E"
+  },
+  "typography": {
+    "heading_font": "Cabinet Grotesk",
+    "body_font": "Manrope",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1C1A]",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#1C1C1A]",
+    "h3": "text-xl sm:text-2xl font-medium text-[#1C1C1A]",
+    "body_large": "text-lg sm:text-xl leading-relaxed text-[#5B5B56]",
+    "body": "text-base leading-relaxed text-[#5B5B56]",
+    "label": "text-sm font-semibold tracking-[0.05em] uppercase text-[#5B5B56]"
+  },
+  "layout": {
+    "spacing_scale": "generous (p-8, p-12, py-24)",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-8",
+    "border_radius": "rounded-2xl"
+  },
+  "surfaces": {
+    "header": "backdrop-blur-xl bg-[#F9F9F7]/80 border-b border-[#E0DCD1] sticky top-0 z-50",
+    "cards": "bg-[#FFFFFF] border border-[#E0DCD1] rounded-2xl p-8 shadow-sm transition-all hover:shadow-md",
+    "cards_highlight": "bg-[#2C5234] text-white border-none rounded-2xl p-8 shadow-lg",
+    "footer": "bg-[#1C1C1A] text-[#F9F9F7] py-20"
+  },
+  "components": {
+    "button_primary": "bg-[#2C5234] text-white px-6 py-3 rounded-full font-medium transition-colors hover:bg-[#1F3A24] inline-flex items-center justify-center",
+    "button_secondary": "bg-transparent text-[#2C5234] border border-[#2C5234] px-6 py-3 rounded-full font-medium transition-colors hover:bg-[#EFECE6] inline-flex items-center justify-center",
+    "badge": "inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#EFECE6] text-[#2C5234]"
+  },
+  "animations": {
+    "hover": "transition-all duration-300 ease-out",
+    "scroll_reveal": "framer-motion fade-in and slide-up (y: 20, opacity: 0 to 1) with 0.5s duration and 0.2s stagger"
+  },
+  "images": {
+    "hero_main": {
+      "url": "https://images.unsplash.com/photo-1758523417133-41f21fb9f058?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxyZWxheGVkJTIwbWF0dXJlJTIwY291cGxlJTIwZHJpbmtpbmclMjBjb2ZmZWUlMjBicmlnaHR8ZW58MHx8fHwxNzc1MjAzNDEwfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Couple checking their retirement plan over coffee"
+    },
+    "background_texture": {
+      "url": "https://images.unsplash.com/photo-1624324381691-fc1bb5a2dafe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHNhZ2UlMjBncmVlbiUyMHNhbmQlMjB0ZXh0dXJlJTIwbWluaW1hbGlzdHxlbnwwfHx8fDE3NzUyMDM0MTZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Soft earthy background texture"
+    },
+    "document_desk": {
+      "url": "https://images.unsplash.com/photo-1599947146406-612486387faf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxjbGVhbiUyMGRlc2slMjB3aXRoJTIwZG9jdW1lbnRzJTIwYW5kJTIwZ2xhc3NlcyUyMG1vZGVybnxlbnwwfHx8fDE3NzUyMDM0MTZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Documents and glasses on a desk"
+    },
+    "testimonial_1": {
+      "url": "https://images.pexels.com/photos/16322150/pexels-photo-16322150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Portrait of a mature professional man"
+    },
+    "testimonial_2": {
+      "url": "https://images.pexels.com/photos/7971644/pexels-photo-7971644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Portrait of a confident senior woman"
+    },
+    "testimonial_3": {
+      "url": "https://images.unsplash.com/photo-1738566061883-1b568c74b550?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBtYXR1cmUlMjBzbWlsaW5nJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzc1MjAzNDEwfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Portrait of a man in a suit"
+    }
+  },
+  "icons_library": "lucide-react",
+  "data_testid_requirement": "All interactive elements, buttons, form inputs, and key information blocks must include a role-based, kebab-case data-testid attribute.",
+  "sections_instructions": {
+    "Hero": "Split layout. Left: H1, subheadline, primary CTA, trust badge (e.g., '+15,000 accompagnés'). Right: Image offset with soft rounded corners. Background: warm sand (#F9F9F7).",
+    "Problem": "Bento Grid layout (Mode A). Focus on the complexity of French retirement system. Use dark text on white cards, heavy padding.",
+    "Solution": "Highlight clarity. Use the abstract texture as a soft background or overlay. Introduce 3 steps with connecting lines.",
+    "Simulator": "Cardless, dense layout. Use Shadcn forms/sliders for Age, Contribution Years, and Average Income. Dark green button to 'Simuler'.",
+    "Pricing": "3-tier setup. 9€, 29€, 150€. Center tier should pop out using the primary green (#2C5234) and white text. Add Stripe CTAs.",
+    "Social_Proof": "Marquee with user testimonials and 5-star ratings.",
+    "Blog": "Grid of 13 dummy SEO article cards. Title, date, read time. Hover lift effect.",
+    "Contact_&_Disclaimer": "Clean form layout. Footer with dark background (#1C1C1A) for legal text."
+  }
+}
